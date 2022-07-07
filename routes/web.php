@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ZohoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('zohocrmauth', [ZohoController::class, 'auth'])->name('zohocrmauth');
+Route::get('zohocrm', [ZohoController::class, 'store'])->name('zohocrm');
